@@ -68,6 +68,8 @@ contract CToken{
       balanceof[_from] -= _value;
       balanceof[_to] += _value;
       //update allowance
+
+      allowance[_from][msg.sender] -= _value;
       //transfer event
 
        emit Transfer(_from, _to, _value);
